@@ -1,2 +1,6 @@
 # Post_simple_ver
-Post web with necessary feature
+React & Spring을 활용하여 필수 기능만 들어있는 간단한 게시판을 생성하기.
+
+## WireFrame
+
+![WireFrame](src/Post_wireframe.png)
