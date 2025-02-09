@@ -7,9 +7,17 @@ a {
   color: black;
 }
 
+ul {
+  padding-left: 0px;
+}
+
+li {
+  list-style: none;
+  padding-left: 0px;
+}
+
 body {
   padding: 1%;
-  text-align: center;
 }
 
 .root-layout {
@@ -37,4 +45,27 @@ body {
 
 .text-bigger {
   font-size: 50px;
+}
+
+.post-list {
+  box-sizing: border-box;
+  padding: 3%
+}
+
+.post-list > h2 {
+  margin-bottom: 3%;
+}
+
+.post-list > ul {
+  box-sizing: border-box;
+  padding: 5%;
+  border: solid 1px lightgray;
+  height: 70vh;
+}
+
+.post-list li {
+  box-sizing: border-box;
+  margin-bottom: 5%;
+  display: flex;
+  justify-content: space-between;
 }
