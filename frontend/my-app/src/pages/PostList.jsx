@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import postApi from "../api/PostApi";
 import { Link, useNavigate } from "react-router-dom";
+import Button from "../components/Button";
 
 export default function PostList() {
   const [posts, setPosts] = useState([]);
@@ -15,15 +16,17 @@ export default function PostList() {
     fetchPosts();
   }, []);
 
-  function onClick(){
-    navigate('/posts/create')
-  }
-
   return (
     <div className="post-list">
       <div>
         <h2>게시글 목록</h2>
-        <button onClick={onClick}>게시글 작성</button>
+        <Button
+          onClick={() => {
+            navigate("/posts/create");
+          }}
+        >
+          게시글 작성
+        </Button>
       </div>
       <ul>
         {posts.map((post) => {

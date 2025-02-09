@@ -1,7 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Button from "./Button";
 
 export default function RootHeader() {
+  const navigate = useNavigate();
+
   return (
     <nav className="root-header">
       <Link to="/">
@@ -15,12 +18,20 @@ export default function RootHeader() {
         <h1>와글와글</h1>
       </Link>
       <div className="root-header-button-box">
-        <Link to="/my-page">
-          <button>마이페이지</button>
-        </Link>
-        <Link to="/login">
-          <button>로그인</button>
-        </Link>
+        <Button
+          onClick={() => {
+            navigate("/my-page");
+          }}
+        >
+          마이페이지
+        </Button>
+        <Button
+          onClick={() => {
+            navigate("/login");
+          }}
+        >
+          로그인
+        </Button>
       </div>
     </nav>
   );

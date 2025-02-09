@@ -45,6 +45,7 @@ body {
 
 .text-bigger {
   font-size: 50px;
+  text-align: center;
 }
 
 .post-list {
@@ -70,6 +71,13 @@ body {
   margin-bottom: 5%;
   display: flex;
   justify-content: space-between;
+}
+
+.button-style {
+  border: none;
+  height: 30px;
+  background-color:antiquewhite;
+  cursor: pointer;
 }
 
 footer {
