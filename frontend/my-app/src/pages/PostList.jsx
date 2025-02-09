@@ -21,7 +21,7 @@ export default function PostList() {
         {posts.map((post) => {
           return (
             <>
-              <Link to={`/${post.id}`}>
+              <Link to={`/posts/${post.id}`}>
                 <li key={post.id}>
                   <span>{post.title}</span>
                   <span>{post.createdAt}</span>
