@@ -2,6 +2,11 @@
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 body {
   padding: 1%;
   text-align: center;
