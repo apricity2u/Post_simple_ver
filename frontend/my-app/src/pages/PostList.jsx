@@ -22,7 +22,7 @@ export default function PostList() {
           return (
             <>
               <Link to={`/${post.id}`}>
-                <li>
+                <li key={post.id}>
                   <span>{post.title}</span>
                   <span>{post.createdAt}</span>
                 </li>
