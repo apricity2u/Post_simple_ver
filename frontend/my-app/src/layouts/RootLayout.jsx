@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import RootHeader from "../component/RootHeader";
-import RootFooter from "../component/RootFooter";
+import RootHeader from "../components/RootHeader";
+import RootFooter from "../components/RootFooter";
 
 export default function RootLayout() {
   return (
