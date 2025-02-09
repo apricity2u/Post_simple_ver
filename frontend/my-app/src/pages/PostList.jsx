@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import postApi from "../api/PostApi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function PostList() {
   const [posts, setPosts] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchPosts() {
@@ -14,9 +15,16 @@ export default function PostList() {
     fetchPosts();
   }, []);
 
+  function onClick(){
+    navigate('/posts/create')
+  }
+
   return (
     <div className="post-list">
-      <h2>게시글 목록</h2>
+      <div>
+        <h2>게시글 목록</h2>
+        <button onClick={onClick}>게시글 작성</button>
+      </div>
       <ul>
         {posts.map((post) => {
           return (

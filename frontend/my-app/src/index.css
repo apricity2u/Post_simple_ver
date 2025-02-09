@@ -52,8 +52,10 @@ body {
   padding: 3%
 }
 
-.post-list > h2 {
+.post-list > div {
   margin-bottom: 3%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .post-list > ul {
