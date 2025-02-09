@@ -1,39 +1,35 @@
 import React, { useEffect, useState } from "react";
 import postApi from "../api/PostApi";
+import { Link } from "react-router-dom";
 
 export default function PostList() {
+  const [posts, setPosts] = useState([]);
 
-  const [posts, setPosts] = useState([])
-
-  useEffect(()=>{
+  useEffect(() => {
     async function fetchPosts() {
       const response = await postApi.getPosts();
-      const data = response.data
-      setPosts(data.data)
+      const data = response.data;
+      setPosts(data.data);
     }
-    fetchPosts()
-  },[])
+    fetchPosts();
+  }, []);
 
   return (
     <div className="post-list">
       <h2>게시글 목록</h2>
       <ul>
-        <li>
-          <span>게시글 제목</span>
-          <span>작성시간</span>
-        </li>
-        <li>
-          <span>게시글 제목</span>
-          <span>작성시간</span>
-        </li>
-        <li>
-          <span>게시글 제목</span>
-          <span>작성시간</span>
-        </li>
-        <li>
-          <span>게시글 제목</span>
-          <span>작성시간</span>
-        </li>
+        {posts.map((post) => {
+          return (
+            <>
+              <Link to={`/${post.id}`}>
+                <li>
+                  <span>{post.title}</span>
+                  <span>{post.createdAt}</span>
+                </li>
+              </Link>
+            </>
+          );
+        })}
       </ul>
     </div>
   );
